@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+        \begin{axis}[
+            axis x line=center,
+            axis y line=center,
+            ytick={0,1},
+            xlabel={$\displaystyle \sum_{i=1}^n{w_ix_i} + b$},
+            ylabel={$\displaystyle f'\left(\sum_{i=1}^n{w_ix_i} + b\right)$},
+            xlabel style={below right},
+            ylabel style={above},
+            xmin=-5.5,
+            xmax=5.5,
+            ymin=-0.05,
+            ymax=2,
+            domain=-5:5
+        ]
+            \addplot+[black,mark=none,domain=-5:0,ultra thick] {1.0507*1.67636*exp(x)};
+            \addplot+[black,mark=none,domain=0:5,ultra thick] {1.0507};
+        \end{axis}
+\end{tikzpicture}

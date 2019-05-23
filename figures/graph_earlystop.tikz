@@ -1,0 +1,30 @@
+\definecolor{c1}{HTML}{0072B2}
+\definecolor{c2}{HTML}{009E73}
+\begin{tikzpicture}
+    \tikzstyle{training}=[c1, thick,samples=200]
+    \tikzstyle{testing}=[c2, thick,samples=200]
+    \begin{axis}[
+        legend pos=north east,
+        axis x line=bottom,
+        axis y line=left,
+        xmin=0,
+        xmax= 105,
+        ymin=0,
+        ymax= 1.1,
+        xlabel=Epochs,
+        ylabel=Error]
+
+      \addplot [domain=5:100, training] {0.1 + 1.1*exp(-0.08*x)};
+      \addlegendentry{Training set}
+
+      \addplot[domain=5:50, testing] {(x-50)^2/2700 + 0.2};
+      \addlegendentry{Validation set}
+            
+      \addplot[domain=50:100, testing] {(x-50)^2/10000 + 0.2};
+
+      \draw[dashed, thick] (axis cs:50,0.0) -- (axis cs:50,0.5);
+      \draw[decoration={text along path, text={overfitting}, text align={center}}, decorate] (axis cs:51,0.52) -- (axis cs:100,0.52);
+      \draw[-{latex}, thick] (axis cs:51,0.5) -- (axis cs:100,0.5);
+
+    \end{axis}
+\end{tikzpicture}

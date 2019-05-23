@@ -1,0 +1,54 @@
+\begin{tikzpicture}
+	
+	\node[circle, draw, red, fill=red!10] (i1) {};
+	\node[circle, draw, above=2em of i1] (i2) {};
+	\node[circle, draw, above=2em of i2] (i3) {};
+	\node[circle, draw, red, fill=red!10, below=2em of i1] (i4) {};
+	\node[circle, draw, below=2em of i4] (i5) {};
+	
+%	\node[red] (icr) at (i4) {$\mathlarger{\mathlarger{\mathlarger{\times}}}$};
+%	\node[red] (icr) at (i1) {$\mathlarger{\mathlarger{\mathlarger{\times}}}$};
+	
+	\node[circle, draw, right=4em of i1] (h1) {};
+	\node[circle, draw, red, fill=red!10, right=4em of i2] (h2) {};
+	\node[circle, draw, red, fill=red!10, right=4em of i3] (h3) {};
+	\node[circle, draw, red, fill=red!10, right=4em of i4] (h4) {};
+	\node[circle, draw, right=4em of i5] (h5) {};
+	
+%	\node[red] (icr) at (h2) {$\mathlarger{\mathlarger{\mathlarger{\times}}}$};
+%	\node[red] (icr) at (h3) {$\mathlarger{\mathlarger{\mathlarger{\times}}}$};
+%	\node[red] (icr) at (h4) {$\mathlarger{\mathlarger{\mathlarger{\times}}}$};
+	
+	\node[circle, draw, right=4em of h1] (hh1) {};
+	\node[circle, draw, right=4em of h2] (hh2) {};
+	\node[circle, draw, right=4em of h3] (hh3) {};
+	\node[circle, draw, right=4em of h4] (hh4) {};
+	\node[circle, draw, right=4em of h5] (hh5) {};
+	
+	\node[circle, draw, right=4em of hh1] (o1) {};
+	
+	\draw[-latex] (i3) -- (h1);
+	\draw[-latex] (i3) -- (h5);
+	\draw[-latex] (i2) -- (h1);
+	\draw[-latex] (i2) -- (h5);
+	\draw[-latex] (i5) -- (h1);
+	\draw[-latex] (i5) -- (h5);
+	
+	\draw[-latex] (h1) -- (hh1);
+	\draw[-latex] (h1) -- (hh2);
+	\draw[-latex] (h1) -- (hh3);
+	\draw[-latex] (h1) -- (hh4);
+	\draw[-latex] (h1) -- (hh5);
+	\draw[-latex] (h5) -- (hh1);
+	\draw[-latex] (h5) -- (hh2);
+	\draw[-latex] (h5) -- (hh3);
+	\draw[-latex] (h5) -- (hh4);
+	\draw[-latex] (h5) -- (hh5);
+	
+	\draw[-latex] (hh1) -- (o1);
+	\draw[-latex] (hh2) -- (o1);
+	\draw[-latex] (hh3) -- (o1);
+	\draw[-latex] (hh4) -- (o1);
+	\draw[-latex] (hh5) -- (o1);
+
+\end{tikzpicture}

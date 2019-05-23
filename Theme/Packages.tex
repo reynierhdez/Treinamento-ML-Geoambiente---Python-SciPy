@@ -1,0 +1,82 @@
+% Load Packages
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{fontawesome}
+\usepackage{tikzscale}
+
+\usepackage{subfigure}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+
+\usepackage{tikz}
+\usepackage{bm}
+\usepackage{relsize}
+
+\usepackage{algorithmic}
+\usepackage{algorithm}
+
+\usepackage{dtklogos}
+
+\usepackage[outline]{contour}
+
+\usepackage{minted}
+
+\newminted{python}{fontsize=\scriptsize, 
+                   linenos,
+                   numbersep=8pt,
+                   gobble=4,
+                   frame=lines,
+                   bgcolor=bg,
+                   framesep=3mm} 
+                   
+\makeatletter
+\newcommand{\HEADER}[1]{\ALC@it\underline{\textsc{#1}}\begin{ALC@g}}
+\newcommand{\ENDHEADER}{\end{ALC@g}}
+\makeatother
+
+\pgfplotsset{every axis/.append style={tick label style={/pgf/number format/fixed},font=\scriptsize,ylabel near ticks,xlabel near ticks,grid=major}}
+
+\usepackage{amsmath, amssymb, latexsym}
+\usepackage{xcolor-material}
+
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{positioning}
+\usetikzlibrary{fadings}
+\usetikzlibrary{matrix}
+\usetikzlibrary{chains}
+\usetikzlibrary{arrows.meta,arrows}
+\usetikzlibrary{intersections}
+\usetikzlibrary{quotes,arrows.meta}
+\usetikzlibrary{shapes.geometric}
+
+\pgfplotsset{compat=1.14}
+
+\usetikzlibrary{mindmap,shadows}
+% Information boxes
+\newcommand*{\info}[4][16.3]{%
+  \node [ annotation, #3, scale=0.65, text width = #1em,
+          inner sep = 2mm ] at (#2) {%
+  \list{$\bullet$}{\topsep=0pt\itemsep=0pt\parsep=0pt
+    \parskip=0pt\labelwidth=8pt\leftmargin=8pt
+    \itemindent=0pt\labelsep=2pt}%
+    #4
+  \endlist
+  };
+}
+\tikzset{grow cyclic list/.code={%
+  \def\tikzgrowthpositions{{#1}}%
+  \foreach \n [count=\i,remember=\i]in {#1}{}%
+  \let\tikzgrowthpositionscount=\i%
+  \tikzset{growth function=\tikzgrowcycliclist}}}
+\def\tikzgrowcycliclist{%
+  \pgftransformshift{%
+    \pgfpointpolar{\tikzgrowthpositions[mod(\the\tikznumberofcurrentchild-1,\tikzgrowthpositionscount)]}%
+      {\the\tikzleveldistance}}}

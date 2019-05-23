@@ -1,0 +1,50 @@
+\tikzstyle{neuron}=[circle,fill=black!25,minimum size=30pt,inner sep=0pt]
+
+\begin{tikzpicture}[
+init/.style={
+  draw,
+  circle,
+  inner sep=2pt,
+  font=\Huge,
+  join = by -latex
+},
+squa/.style={
+  draw,
+  inner sep=2pt,
+  font=\Large,
+  join = by -latex
+},
+start chain=2,node distance=20mm
+]
+\node[on chain=2]   (x2) {$x_2$};
+\node[on chain=2,join=by o-latex] (w2)  {$w_2$};
+\begin{scope}[start chain=1]
+\node[on chain=1] at (0,1.5cm)   (x1) {$x_1$};
+\node[on chain=1,join=by o-latex]   (w1) {$w_1$};
+\end{scope}
+\begin{scope}[start chain=3]
+\node[on chain=3] at (0,-1.5cm)   (x3) {$x_3$};
+\node[on chain=3,join=by o-latex]   (w3) {$w_3$};
+\end{scope}
+\begin{scope}[start chain=4]
+\node[on chain=4] at (0,-3.0cm)   (x4) {$x_4$};
+\node[on chain=4,join=by o-latex]   (w4) {$w_4$};
+\end{scope}
+\begin{scope}[start chain=5]
+\node[on chain=5] at (0,-4.5cm)   (x5) {$x_5$};
+\node[on chain=5,label=below:Weights,join=by o-latex]   (w5) {$w_5$};
+\end{scope}
+\node[on chain=3,init] (sigma)   {$\displaystyle\Sigma$};
+\node[on chain=3,squa,label=above:{\parbox{2cm}{\centering Activation \\ function}}]   {$f$};
+\node[on chain=3,label=above:Output,join=by -latex]  {$y$};
+
+\node[label=above:\parbox{2cm}{\centering Bias \\ $b$}] at (sigma|-w1) (b) {};
+
+\draw[-latex] (w1) -- (sigma);
+\draw[-latex] (w2) -- (sigma);
+\draw[-latex] (w4) -- (sigma);
+\draw[-latex] (w5) -- (sigma);
+\draw[o-latex] (b) -- (sigma);
+
+\draw[decorate,decoration={brace,mirror}] (x1.north west) -- node[left=10pt] {Inputs} (x5.south west);
+\end{tikzpicture}

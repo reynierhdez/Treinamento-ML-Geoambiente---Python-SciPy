@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+        \begin{axis}%
+        [ 
+            axis x line=center,
+            axis y line=center,
+            xtick={-6,-4,...,6},
+            ytick={0,1,2},
+            y tick label style={
+        /pgf/number format/.cd,
+            fixed,
+            fixed zerofill,
+            precision=1,
+        /tikz/.cd
+    },
+            xlabel={$\displaystyle \sum_{i=1}^n{w_ix_i} + b$},
+            ylabel={$\displaystyle f'\left(\sum_{i=1}^n{w_ix_i} + b\right)$},
+            xlabel style={below right},
+            ylabel style={above},
+            xmin=-6.5,
+            xmax=7,
+            ymin=-0.05,
+            ymax=2.15,
+            domain=-7:7
+        ]
+            \addplot+[ycomb,black,ultra thick,mark=triangle,mark options={rotate=0}] plot coordinates {(0,2)};
+            \addplot+[black,mark=none,domain=-6.5:0,ultra thick] {0};
+            \addplot+[black,mark=none,domain=0:6.5,ultra thick] {0};
+        \end{axis}
+ \end{tikzpicture}

@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+        \begin{axis}%
+        [ 
+            axis x line=center,
+            axis y line=center,
+            xtick={-6,-4,...,6},
+            ytick={-.2,0,.2,.4,.6,.8,1,1.2},
+            y tick label style={
+        /pgf/number format/.cd,
+            fixed,
+            fixed zerofill,
+            precision=2,
+        /tikz/.cd
+    },
+            xlabel={$\displaystyle \sum_{i=1}^n{w_ix_i} + b$},
+            ylabel={$\displaystyle f\left(\sum_{i=1}^n{w_ix_i} + b\right)$},
+            xlabel style={below right},
+            ylabel style={above},
+            xmin=-6.5,
+            xmax=6.5,
+            ymin=-0.25,
+            ymax=1.28,
+            domain=-7:7
+        ]
+            \addplot+[black,mark=none,samples=100,domain=-7:7,ultra thick] (x,{x/(1+exp(-x)) + (1/(1+exp(-x))) * (1 - x/(1+exp(-x)))});
+        \end{axis}
+ \end{tikzpicture}

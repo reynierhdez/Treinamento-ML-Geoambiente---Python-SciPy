@@ -1,0 +1,82 @@
+\begin{tikzpicture}
+
+	\node[circle, draw] (i1) {};
+	\node[circle, draw, above=2em of i1] (i2) {};
+	\node[circle, draw, above=2em of i2] (i3) {};
+	\node[circle, draw, below=2em of i1] (i4) {};
+	\node[circle, draw, below=2em of i4] (i5) {};
+	
+	\node[circle, draw, right=4em of i1] (h1) {};
+	\node[circle, draw, right=4em of i2] (h2) {};
+	\node[circle, draw, right=4em of i3] (h3) {};
+	\node[circle, draw, right=4em of i4] (h4) {};
+	\node[circle, draw, right=4em of i5] (h5) {};
+	
+	\node[circle, draw, right=4em of h1] (hh1) {};
+	\node[circle, draw, right=4em of h2] (hh2) {};
+	\node[circle, draw, right=4em of h3] (hh3) {};
+	\node[circle, draw, right=4em of h4] (hh4) {};
+	\node[circle, draw, right=4em of h5] (hh5) {};
+	
+	\node[circle, draw, right=4em of hh1] (o1) {};
+	
+	\draw[-latex] (i1) -- (h1);
+	\draw[-latex] (i1) -- (h2);
+	\draw[-latex] (i1) -- (h3);
+	\draw[-latex] (i1) -- (h4);
+	\draw[-latex] (i1) -- (h5);
+	\draw[-latex] (i2) -- (h1);
+	\draw[-latex] (i2) -- (h2);
+	\draw[-latex] (i2) -- (h3);
+	\draw[-latex] (i2) -- (h4);
+	\draw[-latex] (i2) -- (h5);
+	\draw[-latex] (i3) -- (h1);
+	\draw[-latex] (i3) -- (h2);
+	\draw[-latex] (i3) -- (h3);
+	\draw[-latex] (i3) -- (h4);
+	\draw[-latex] (i3) -- (h5);
+	\draw[-latex] (i4) -- (h1);
+	\draw[-latex] (i4) -- (h2);
+	\draw[-latex] (i4) -- (h3);
+	\draw[-latex] (i4) -- (h4);
+	\draw[-latex] (i4) -- (h5);
+	\draw[-latex] (i5) -- (h1);
+	\draw[-latex] (i5) -- (h2);
+	\draw[-latex] (i5) -- (h3);
+	\draw[-latex] (i5) -- (h4);
+	\draw[-latex] (i5) -- (h5);
+	
+	\draw[-latex] (h1) -- (hh1);
+	\draw[-latex] (h1) -- (hh2);
+	\draw[-latex] (h1) -- (hh3);
+	\draw[-latex] (h1) -- (hh4);
+	\draw[-latex] (h1) -- (hh5);
+	\draw[-latex] (h2) -- (hh1);
+	\draw[-latex] (h2) -- (hh2);
+	\draw[-latex] (h2) -- (hh3);
+	\draw[-latex] (h2) -- (hh4);
+	\draw[-latex] (h2) -- (hh5);
+	\draw[-latex] (h3) -- (hh1);
+	\draw[-latex] (h3) -- (hh2);
+	\draw[-latex] (h3) -- (hh3);
+	\draw[-latex] (h3) -- (hh4);
+	\draw[-latex] (h3) -- (hh5);
+	\draw[-latex] (h4) -- (hh1);
+	\draw[-latex] (h4) -- (hh2);
+	\draw[-latex] (h4) -- (hh3);
+	\draw[-latex] (h4) -- (hh4);
+	\draw[-latex] (h4) -- (hh5);
+	\draw[-latex] (h5) -- (hh1);
+	\draw[-latex] (h5) -- (hh2);
+	\draw[-latex] (h5) -- (hh3);
+	\draw[-latex] (h5) -- (hh4);
+	\draw[-latex] (h5) -- (hh5);
+	
+	
+	\draw[-latex] (hh1) -- (o1);
+	\draw[-latex] (hh2) -- (o1);
+	\draw[-latex] (hh3) -- (o1);
+	\draw[-latex] (hh4) -- (o1);
+	\draw[-latex] (hh5) -- (o1);
+	
+\end{tikzpicture}
